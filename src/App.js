@@ -8,9 +8,6 @@ export default function App() {
   const [open, setOpen] = useState(false);
 
   console.log("App");
-  const onClickCountUp = () => {
-    setCount(count + 1);
-  };
   const onChangeText = (e) => setText(e.target.value);
   const onClickOpen = () => {
     setOpen(!open);
