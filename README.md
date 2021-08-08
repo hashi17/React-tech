@@ -13,3 +13,8 @@ Created with CodeSandbox
   - Styled JSX
     - next.js Default
   - styled components
+  - Emotion
+    - @emotion/react
+    - @emotion/styled
+    - InlineStyle/CssModule/StyledComponents 的な様々な使い方が出来る
+    - /\*\* @jsx jsx \*/が必要でちょっと癖あり
