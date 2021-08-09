@@ -2,10 +2,15 @@ import { useState, useCallback, useMemo } from "react";
 import { ChildArea } from "./components/ChildArea";
 import { CssModules } from "./components/CssModules";
 import { Emotion } from "./components/Emotion";
+import { Home } from "./components/Home";
 import { InlineStyle } from "./components/InlineStyle";
+import { Page1 } from "./components/Page1";
+import { Page2 } from "./components/Page2";
 import { StyledComponents } from "./components/StyledComponents";
 import { StyledJsx } from "./components/StyledJsx";
 import "./styles.css";
+
+import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -22,17 +27,25 @@ export default function App() {
   console.log(temp);
 
   return (
-    <div className="App">
-      <InlineStyle />
-      <CssModules />
-      <StyledJsx />
-      <StyledComponents />
-      <Emotion />
-      <input value={text} onChange={onChangeText} />
-      <br />
-      <br />
-      <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} onClickClose={onClickClose} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Link to="/">Home</Link>
+        <br />
+        <Link to="/page1">Page1</Link>
+        <br />
+        <Link to="/page2">Page2</Link>
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/page1">
+          <Page1 />
+        </Route>
+        <Route path="/page2">
+          <Page2 />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
