@@ -1,8 +1,10 @@
+import React, { memo } from "react";
 import styled from "styled-components";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { Input } from "../atoms/input/Input";
 
-export const SerachInput = () => {
+export const SerachInput = memo(() => {
+  console.log("SearchInput");
   return (
     <div>
       <SContainer>
@@ -13,7 +15,7 @@ export const SerachInput = () => {
       </SContainer>
     </div>
   );
-};
+});
 
 const SContainer = styled.div`
   display: flex;
