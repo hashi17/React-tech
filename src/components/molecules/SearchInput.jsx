@@ -21,5 +21,5 @@ const SContainer = styled.div`
 `;
 
 const SButtonWrappr = styled.div`
-  padding-left: px;
+  padding-left: 8px;
 `;
